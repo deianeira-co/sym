@@ -30,6 +30,8 @@ const el_log_list = document.querySelector("[data-log-list]");
 const el_cpanel = document.querySelector("[data-cpanel]");
 const el_ctrl_divs = document.querySelector("[data-cpanel-divs]");
 const el_ctrl_angle = document.querySelector("[data-cpanel-angle]");
+const el_ctrl_mirror_scale_x = document.querySelector("[data-cpanel-mirror-scale-x]");
+const el_ctrl_mirror_scale_y = document.querySelector("[data-cpanel-mirror-scale-y]");
 const el_ctrl_bg_clr = document.querySelector("[data-cpanel-bg-clr]");
 const el_ctrl_stroke_width = document.querySelector("[data-cpanel-stroke-width]");
 const el_ctrl_stroke_clr = document.querySelector("[data-cpanel-stroke-clr]");
@@ -51,6 +53,8 @@ let canvas_is_target = false;
 
 let divs = el_ctrl_divs.value;
 let angle = el_ctrl_angle.value / divs;
+let mirror_scale_x = el_ctrl_mirror_scale_x.value;
+let mirror_scale_y = el_ctrl_mirror_scale_y.value;
 
 let actions = [];
 let trimmed_actions = [];
@@ -165,6 +169,26 @@ const minus_divs = function() {
     el_ctrl_divs.value--;
     log(`decreased divs to ${el_ctrl_divs.value}`);
 };
+
+const plus_mirror_scale_x = function() {
+    el_ctrl_mirror_scale_x.value++;
+    log(`increased mirror offset to ${el_ctrl_mirror_scale_x.value}`);
+}
+
+const minus_mirror_scale_x = function() {
+    el_ctrl_mirror_scale_x.value--;
+    log(`decreased mirror offset to ${el_ctrl_mirror_scale_x.value}`);
+}
+
+const plus_mirror_scale_y = function() {
+    el_ctrl_mirror_scale_y.value++;
+    log(`increased mirror offset to ${el_ctrl_mirror_scale_y.value}`);
+}
+
+const minus_mirror_scale_y = function() {
+    el_ctrl_mirror_scale_y.value--;
+    log(`decreased mirror offset to ${el_ctrl_mirror_scale_y.value}`);
+}
 
 const plus_stroke_width = function() {
     el_ctrl_stroke_width.value++;
@@ -516,15 +540,20 @@ const setup = function() {
     ctx.lineWidth = el_ctrl_stroke_width.value;
     ctx.strokeStyle = el_ctrl_stroke_clr.value;
 
-    ctx.translate(canvas_width / 2, canvas_height / 2);
+    ctx.translate(half_canvas_x, half_canvas_y);
 };
 
 const update = function() {
     requestAnimationFrame(update);
 
+    divs = el_ctrl_divs.value;
+    angle = el_ctrl_angle.value / divs;
+    mirror_scale_x = el_ctrl_mirror_scale_x.value;
+    mirror_scale_y = el_ctrl_mirror_scale_y.value;
+
     if (!additive_mode) {
         ctx.fillStyle = el_ctrl_bg_clr.value;
-        ctx.clearRect(0 - half_canvas_x, 0 - half_canvas_y, el_canvas.width, el_canvas.height);
+        ctx.fillRect(0 - half_canvas_x, 0 - half_canvas_y, el_canvas.width, el_canvas.height);
     }
 
     // this causes mayhem when divs is a decimal value, i like it.
@@ -536,8 +565,6 @@ const update = function() {
         ctx.clearRect(0 - half_canvas_x, 0 - half_canvas_y, canvas_width, canvas_height);
     }
 
-    divs = el_ctrl_divs.value;
-    angle = el_ctrl_angle.value / divs;
     document.body.style.backgroundColor = el_ctrl_bg_clr.value;
     ctx.lineWidth = el_ctrl_stroke_width.value;
     ctx.strokeStyle = el_ctrl_stroke_clr.value;
@@ -552,7 +579,7 @@ const update = function() {
 
             if (mirror_mode) {
                 ctx.save();
-                ctx.scale(1, -1);
+                ctx.scale(mirror_scale_x, -mirror_scale_y);
                 ctx.moveTo(actions[i].x, actions[i].y);
                 ctx.lineTo(actions[i].px, actions[i].py);
                 ctx.restore();

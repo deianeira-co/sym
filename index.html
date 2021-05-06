@@ -158,38 +158,47 @@
         <aside class="cpanel cpanel--hidden" data-cpanel>
             <div class="ctrl-cont">
                 <label for="divisions">divisions</label>
-                <input class="ctrl" type="number" id="divisions" name="divisions" min="1" max="1000" value="12" tabindex="-1" data-cpanel-divs>
+                <input class="ctrl" type="number" id="divisions" name="divisions" min="1" max="1000" value="12" tabindex="-1" data-cpanel-divs />
             </div>
 
             <div class="ctrl-cont">
                 <label for="angle">angle</label>
-                <input class="ctrl" type="number" id="angle" name="angle" min="0" max="360" value="360" tabindex="-1" data-cpanel-angle>
+                <input class="ctrl" type="number" id="angle" name="angle" min="0" max="360" value="360" tabindex="-1" data-cpanel-angle />
             </div>
 
             <div class="ctrl-cont">
                 <label for="stroke-width">stroke</label>
-                <input class="ctrl" type="number" id="stroke-width" name="strokewidth" min="1" max="10" value="1" tabindex="-1"data-cpanel-stroke-width>
+                <input class="ctrl" type="number" id="stroke-width" name="strokewidth" min="0" max="10" value="1" step="0.1" tabindex="-1" data-cpanel-stroke-width />
             </div>
 
             <div class="ctrl-cont">
                 <label for="stroke-colour">stroke color</label>
-                <input class="ctrl--clr" type="color" id="stroke-colour" name="strokecolour" value="#000000" tabindex="-1" data-cpanel-stroke-clr>
+                <input class="ctrl--clr" type="color" id="stroke-colour" name="strokecolour" value="#000000" tabindex="-1" data-cpanel-stroke-clr />
             </div>
 
             <div class="ctrl-cont">
                 <label for="stroke-opacity">stroke opacity</label>
-                <input class="ctrl" type="number" id="stroke-opacity" name="strokeopacity" min="0" max="255" value="255" tabindex="-1" data-cpanel-stroke-opacity>
+                <input class="ctrl" type="number" id="stroke-opacity" name="strokeopacity" min="0" max="255" value="255" tabindex="-1" data-cpanel-stroke-opacity />
             </div>
 
             <div class="ctrl-cont">
                 <label for="bgcolour">background colour</label>
-                <input class="ctrl--clr" type="color" id="bg-colour" name="bg-colour" value="#ffffff" tabindex="-1" data-cpanel-bg-clr>
+                <input class="ctrl--clr" type="color" id="bg-colour" name="bg-colour" value="#ffffff" tabindex="-1" data-cpanel-bg-clr />
+            </div>
+
+            <div class="ctrl-cont">
+                <label for="mirror-scale-x">mirror scale x</label>
+                <input class="ctrl" type="number" id="mirror-scale-x" name="mirror-scale-x" min="-2" max="2" value="1" step="0.1" tabindex="-1" data-cpanel-mirror-scale-x />
+            </div>
+
+            <div class="ctrl-cont">
+                <label for="mirror-scale-x">mirror scale y</label>
+                <input class="ctrl" type="number" id="mirror-scale-y" name="mirror-scale-y" min="-2" max="2" value="1" step="0.1" tabindex="-1" data-cpanel-mirror-scale-y />
             </div>
         </aside>
 
         <aside class="log log--hidden" data-log tabindex="-1">
-            <div class="log__wrapper" data-log-list>
-            </div>
+            <div class="log__wrapper" data-log-list></div>
         </aside>
 
         <aside class="about about--hidden" data-about>
