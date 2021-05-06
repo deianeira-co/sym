@@ -1,8 +1,14 @@
 :root {
-    --colour__light: #FFFFFF;
-    --colour__mid-light: #BFBFBF;
-    --colour__mid: #7F7F7F;
-    --colour__dark: #000000;
+    --clr__light: #FFFFFF;
+    --clr__dark-light: #;
+    --clr__mid: #AAAAAA;
+    --clr__dark: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -26,6 +32,7 @@ body {
 
 canvas {
     display: block;
+    background-color: transparent;
 }
 
 ul {
@@ -35,7 +42,7 @@ ul {
 }
 
 a {
-    color: var(--colour__dark);
+    color: var(--clr__dark);
 }
 
 a:hover,
@@ -52,11 +59,11 @@ input:focus {
 }
 
 .nav {
-    background-color: var(--colour__light);
+    background-color: var(--clr__light);
     position: absolute;
     top: 0;
     left: 0;
-    color: var(--colour__dark);
+    color: var(--clr__dark);
     padding: 0rem 1rem;
     user-select: none;
     transition: top 0.3s ease;
@@ -76,8 +83,8 @@ input:focus {
 .menu__dropdown:hover,
 .menu__drowndown:active,
 .menu__drowndown:focus {
-    color: var(--colour__light);
-    background-color: var(--colour__dark);
+    color: var(--clr__light);
+    background-color: var(--clr__dark);
     cursor: pointer;
 }
 
@@ -90,8 +97,8 @@ input:focus {
     top: 100%;
     left: 0;
     visibility: hidden;
-    color: var(--colour__dark);
-    background-color: var(--colour__light);
+    color: var(--clr__dark);
+    background-color: var(--clr__light);
 }
 
 .menu__dropdown-option {
@@ -101,15 +108,16 @@ input:focus {
 }
 
 .menu__dropdown-option:hover {
-    background-color: var(--colour__mid-light);
+    background-color: var(--clr__mid);
 }
 
 .menu__input {
     float: right;
-    color: var(--colour__mid);
+    color: var(--clr__mid);
 }
 
 .log {
+    background-color: var(--clr__light);
     position: absolute;
     bottom: 0rem;
     left: 0rem;
@@ -137,11 +145,11 @@ input:focus {
 }
 
 .cpanel {
-    background-color: var(--colour__light);
+    background-color: var(--clr__light);
     padding: 1rem;
     position: absolute;
-    right: 0.5rem;
-    bottom: 0.5rem;
+    right: 0rem;
+    bottom: 0rem;
     user-select: none;
     transition: bottom 0.3s ease;
 }
@@ -150,20 +158,26 @@ input:focus {
     bottom: -24rem;
 }
 
-.control {
-    margin: 0.5rem 0;
-    border: 1px solid var(--colour__dark);
-    padding: 0.25rem;
+.ctrl {
+    margin: 0.5rem 0 0.5rem 1rem;
+    border: 1px solid var(--clr__dark);
+    padding: 0.5rem;
 }
 
-.control--colour {
+.ctrl-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ctrl--clr {
     margin: 0.5rem 0;
-    border: none;
+    border: 0;
 }
 
 .about {
-    border: 1px solid var(--colour__dark);
-    background-color: var(--colour__light);
+    border: 1px solid var(--clr__dark);
+    background-color: var(--clr__light);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -198,6 +212,6 @@ input:focus {
 
 .mark {
     fill: none;
-    stroke: var(--colour__dark);
+    stroke: var(--clr__dark);
     stroke-width: 0.75px;
 }

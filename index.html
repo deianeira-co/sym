@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>sym</title>
 
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./index.css" />
     </head>
 
     <body>
@@ -36,11 +36,6 @@
                             <span>toggle log</span>
                             <span class="menu__input">`</span>
                         </li>
-                        
-                        <!-- <li class="menu__dropdown-option">
-                            <span>quit</span>
-                            <span class="menu__input">end</span>
-                        </li> -->
                     </ul>
                 </li>
 
@@ -78,17 +73,17 @@
                     canvas
 
                     <ul class="menu__dropdown-options">
-                        <li class="menu__dropdown-option" data-menu-increase-divisions>
+                        <li class="menu__dropdown-option" data-menu-plus-divs>
                             <span>increase divisions</span>
                             <span class="menu__input">.</span>
                         </li>
 
-                        <li class="menu__dropdown-option" data-menu-decrease-divisions>
+                        <li class="menu__dropdown-option" data-menu-minus-divs>
                             <span>decrease divisions</span>
                             <span class="menu__input">,</span>
                         </li>
 
-                        <li class="menu__dropdown-option" data-menu-open-background-colour-picker>
+                        <li class="menu__dropdown-option" data-menu-open-bg-clr-picker>
                             <span>background colour</span>
                             <span class="menu__input">b</span>
                         </li>
@@ -99,17 +94,17 @@
                     brush
 
                     <ul class="menu__dropdown-options">
-                        <li class="menu__dropdown-option" data-menu-increase-stroke-width>
+                        <li class="menu__dropdown-option" data-menu-plus-stroke-width>
                             <span>increase stroke</span>
                             <span class="menu__input">[</span>
                         </li>
 
-                        <li class="menu__dropdown-option" data-menu-decrease-stroke-width>
+                        <li class="menu__dropdown-option" data-menu-minus-stroke-width>
                             <span>decrease stroke</span>
                             <span class="menu__input">]</span>
                         </li>
 
-                        <li class="menu__dropdown-option" data-menu-open-stroke-colour-picker>
+                        <li class="menu__dropdown-option" data-menu-open-stroke-clr-picker>
                             <span>stroke colour</span>
                             <span class="menu__input">c</span>
                         </li>
@@ -120,11 +115,6 @@
                     view
 
                     <ul class="menu__dropdown-options">
-                        <li class="menu__dropdown-option">
-                            <span>toggle guides</span>
-                            <span class="menu__input">g</span>
-                        </li>
-
                         <li class="menu__dropdown-option" data-menu-toggle-cursor>
                             <span>toggle cursor</span>
                             <span class="menu__input">h</span>
@@ -166,39 +156,34 @@
         </nav>
 
         <aside class="cpanel cpanel--hidden" data-cpanel>
-            <div class="control-container">
+            <div class="ctrl-cont">
                 <label for="divisions">divisions</label>
-                <input class="control" type="number" id="divisions" name="divisions" min="1" max="1000" value="12" tabindex="-1" data-cpanel-divisions>
+                <input class="ctrl" type="number" id="divisions" name="divisions" min="1" max="1000" value="12" tabindex="-1" data-cpanel-divs>
             </div>
 
-            <div class="control-container">
+            <div class="ctrl-cont">
                 <label for="angle">angle</label>
-                <input class="control" type="number" id="angle" name="angle" min="0" max="360" value="360" tabindex="-1" data-cpanel-angle>
+                <input class="ctrl" type="number" id="angle" name="angle" min="0" max="360" value="360" tabindex="-1" data-cpanel-angle>
             </div>
 
-            <div class="control-container">
-                <label for="backgroundcolour">guide colour</label>
-                <input class="control--colour" type="color" id="guidecolour" name="guidecolour" value="#00ffff" tabindex="-1" data-cpanel-guide-colour>
-            </div>
-
-            <div class="control-container">
-                <label for="backgroundcolour">background colour</label>
-                <input class="control--colour" type="color" id="backgroundcolour" name="backgroundcolour" value="#ffffff" tabindex="-1" data-cpanel-background-colour>
-            </div>
-
-            <div class="control-container">
+            <div class="ctrl-cont">
                 <label for="strokewidth">stroke</label>
-                <input class="control" type="number" id="strokewidth" name="strokewidth" min="1" max="10" value="1" tabindex="-1"data-cpanel-stroke-width>
+                <input class="ctrl" type="number" id="strokewidth" name="strokewidth" min="1" max="10" value="1" tabindex="-1"data-cpanel-stroke-width>
             </div>
 
-            <div class="control-container">
+            <div class="ctrl-cont">
                 <label for="strokecolour">stroke color</label>
-                <input class="control--colour" type="color" id="strokecolour" name="strokecolour" value="#000000" tabindex="-1" data-cpanel-stroke-colour>
+                <input class="ctrl--clr" type="color" id="strokecolour" name="strokecolour" value="#000000" tabindex="-1" data-cpanel-stroke-clr>
             </div>
 
-            <div class="control-container">
+            <div class="ctrl-cont">
                 <label for="strokeopacity">stroke opacity</label>
-                <input class="control" type="number" id="strokeopacity" name="strokeopacity" min="0" max="255" value="255" tabindex="-1" data-cpanel-stroke-opacity>
+                <input class="ctrl" type="number" id="strokeopacity" name="strokeopacity" min="0" max="255" value="255" tabindex="-1" data-cpanel-stroke-opacity>
+            </div>
+
+            <div class="ctrl-cont">
+                <label for="bgcolour">background colour</label>
+                <input class="ctrl--clr" type="color" id="bgcolour" name="bgcolour" value="#ffffff" tabindex="-1" data-cpanel-bg-clr>
             </div>
         </aside>
 
